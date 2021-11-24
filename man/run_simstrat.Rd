@@ -18,8 +18,8 @@ This runs the Simstrat model on the specific simulation stored in \code{sim_fold
 The specified \code{sim_folder} must contain a valid .par file.
 }
 \examples{
-sim_folder <- system.file('extdata', package = 'SimstratR')
-run_simstrat(sim_folder, par_file = 'langtjern.par')
+sim_folder <- system.file("extdata", package = "SimstratR")
+run_simstrat(sim_folder, par_file = "simstrat.par")
 }
 \author{
 Jorrit Mesman, Tadhg Moore
