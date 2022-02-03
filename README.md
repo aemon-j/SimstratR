@@ -2,7 +2,7 @@ SimstratR
 ====
 
 
-R package for basic [Simstrat](https://github.com/Eawag-AppliedSystemAnalysis/Simstrat) model running. `SimstratR` holds the version compiled or downloaded from the [website](https://github.com/Eawag-AppliedSystemAnalysis/Simstrat/releases) on 2020-06-08 (version 2.4.1) and should run virtually on any Windows, Linux and macOS system.  This package does not contain the source code for the model, only the executable. This package was inspired by [GLMr](https://github.com/GLEON/GLMr).
+R package for basic [Simstrat](https://github.com/Eawag-AppliedSystemAnalysis/Simstrat) model running. `SimstratR` holds the version compiled or downloaded from the [website](https://github.com/Eawag-AppliedSystemAnalysis/Simstrat/releases) on 2021-04-23 (version 3.0.1) and should run virtually on any Windows, Linux and macOS system.  This package does not contain the source code for the model, only the executable. This package was inspired by [GLMr](https://github.com/GLEON/GLMr).
 
 ## Installation
 
@@ -36,7 +36,7 @@ sim_out <- read.table(out_file, header = T, sep=",", check.names = F)
 timestep <- get_json_value(par_file, "Simulation", "Timestep s")
 reference_year <- get_json_value(par_file, "Simulation", "Start year")
 # Convert date
-sim_out[,1] <- as.POSIXct(sim_out[,1]*3600*24, origin = paste0(reference_year,"-01-01"))
+sim_out[,1] <- as.POSIXct(sim_out[,1] * 3600 * 24, origin = paste0(reference_year, "-01-01"))
 # In case sub-hourly time steps are used, rounding might be necessary
 sim_out[,1] <- lubridate::round_date(sim_out[,1], unit = lubridate::seconds_to_period(timestep))
 
@@ -53,5 +53,3 @@ colnames(sim_out) <- c("datetime", paste0('wtr_',abs(depths)))
 rLakeAnalyzer::wtr.heat.map(sim_out)
 
 ```
-
-Suite of tools for working with Simstrat output coming soon...
