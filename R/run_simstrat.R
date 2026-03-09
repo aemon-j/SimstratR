@@ -46,7 +46,7 @@ run_simstrat <- function (sim_folder = ".", par_file = "simstrat.par", verbose =
 run_simstratWin <- function(sim_folder,par_file="simstrat.par",verbose=verbose){
 
   if(.Platform$r_arch == "x64"){
-    simstrat_path <- system.file("extbin/win/simstrat_windows_301.exe", package = packageName())
+    simstrat_path <- system.file("extbin/win/simstrat_win_304.exe", package = packageName())
   }else{
     stop("No Simstrat executable available for your machine yet...")
   }
